@@ -1,0 +1,82 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #E1E1E1;
+  }
+  
+header {
+    background-color: #333333;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav {
+    margin: 0;
+    padding: 20px 0;
+}
+
+nav li {
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    width: 80px;
+}
+
+main {
+    text-align: center;
+    position: relative;
+    top: 80px;
+    background-color: #92979b;
+  }
+  
+  main h1 {
+    color: #333;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+    margin-top: 0px;
+    padding-top: 60px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .entry {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  div div {
+    font-family: sans-serif;
+    text-align: center;
+    display: inline-block;
+    padding-top: 20px;
+    height: 150px;
+    width: 200px;
+  }
+
+  .buttonbox h2 a {
+      border: 3px solid black;
+      padding: 20px;
+      color: darkblue;
+      background-color: orange;
+      text-transform: uppercase;
+  }
+
+  .buttonbox h2 a:hover {
+    background-color: white;
+  }
+
+  
