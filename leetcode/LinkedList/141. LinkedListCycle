@@ -4,6 +4,8 @@
 #         self.val = x
 #         self.next = None
 
+Dictionary, key search
+
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         seen = {}
@@ -17,6 +19,7 @@ class Solution:
 Time: O(n)
 Space: O(n)
 
+Slow-Quick Pointer
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
