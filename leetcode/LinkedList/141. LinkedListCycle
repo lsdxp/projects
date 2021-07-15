@@ -1,0 +1,35 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        seen = {}
+        while (head != None):
+            if head not in seen:
+                seen[head]=1
+                head=head.next
+            else:
+                return True
+        return False
+Time: O(n)
+Space: O(n)
+
+
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        if head == None or head.next == None:
+            return False
+        slow = head
+        quick = head.next
+        while slow != quick:
+            if quick == None or quick.next == None:
+                return False
+            else:
+                quick=quick.next.next
+                slow=slow.next
+        return True
+Time: O(n)
+Space: O(1)
