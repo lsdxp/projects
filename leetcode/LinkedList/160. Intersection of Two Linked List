@@ -1,0 +1,45 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        alist = {}
+        while headA:
+            alist[headA]=1
+            headA=headA.next 
+            
+        while headB:
+            if headB in alist:
+                return headB
+            headB=headB.next
+            
+        return None
+Time: O(m+n)
+Space: O(m)
+
+loop A first and build dict/hash and find B element in A hash with O(1)
+
+
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        pA = headA
+        pB = headB
+        while pA != pB:
+            if pA is None:
+                pA = headB
+            else:
+                pA=pA.next
+                
+            if pB is None:
+                pB = headA
+            else:
+                pB=pB.next              
+        return pA
+Time: O(n+m)
+Space: O(1)
+
+move two pointer together: a+b+c = b+a+c, they will meet finally
