@@ -1,0 +1,15 @@
+class Solution:
+    def calPoints(self, ops: List[str]) -> int:
+        score = list ()
+        for i in ops:
+            if i == "C":
+                score.pop()
+            elif i == "D":
+                score.append(score[-1]*2)
+            elif i == "+":
+                score.append(score[-1]+score[-2])
+            else:
+                score.append(int(i))
+        return sum(score)
+        
+  
