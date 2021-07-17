@@ -1,0 +1,16 @@
+class Solution:
+    def removeOuterParentheses(self, s: str) -> str:
+        flag = 0
+        output = ""
+        for i in s:
+            if i == "(":
+                if flag>0:
+                    output+=i
+                flag+=1
+            if i == ")":
+                flag-=1
+                if flag != 0:
+                    output+=i
+        return output
+
++1 if left parenthesis and -1 if right and keep inner 
