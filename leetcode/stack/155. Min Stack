@@ -1,0 +1,28 @@
+class MinStack:
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.minStack = [math.inf]
+        self.inStack = list()
+        
+
+    def push(self, val: int) -> None:
+        self.inStack.append(val)
+        self.minStack.append(min(val, self.minStack[-1]))
+
+    def pop(self) -> None:
+        self.inStack.pop()
+        self.minStack.pop()
+
+    def top(self) -> int:
+        return self.inStack[-1]
+
+    def getMin(self) -> int:
+        return self.minStack[-1]
+        
+        
+Use assistant stack to help        
+        
+

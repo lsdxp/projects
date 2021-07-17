@@ -1,0 +1,15 @@
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        stack = list()
+        if not s:
+            return s
+        else:
+            for i in s:
+                if stack and stack[-1] == i:
+                        stack.pop()
+                else:
+                    stack.append(i)
+        return ''.join(stack)
+Time: O(n)
+Space: O(n)
+keep undeleted data and repeat again

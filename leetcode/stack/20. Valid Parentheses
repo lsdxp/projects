@@ -1,0 +1,27 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) % 2 == 1:
+            return False
+        
+        left2right = {
+            ")": "(",
+            "]": "[",
+            "}": "{",
+        }
+        
+        stack = list()
+        for i in s:
+            if i in left2right:
+                if not stack or stack[-1] != left2right[i]:
+                    return False
+                else:
+                    stack.pop()
+            else:
+                stack.append(i)                        
+        
+        return not stack
+        
+Time: O(n)
+Space: O(stack+hashmap)
+
+use stack to cancel
