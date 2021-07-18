@@ -1,4 +1,13 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+#input
+# 10
+# 64630 11735 14216 99233 14470 4978 73429 38120 51135 67060
+#output
+#43900.6
+#44627.5
+#4978
+#30466.9
+#25017.0 62784.2
 
 import sys
 import math
