@@ -1,0 +1,32 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+import sys
+import math
+
+input_data = sys.stdin.readlines()
+n = int(input_data[0].rstrip())
+data = input_data[1].split(' ')
+data = [int(i) for i in data]
+mean = sum(data)/n
+print(mean)
+data.sort()
+if n % 2 ==0:
+    print((data[int(n/2)]+data[int(n/2)-1])/2)
+else:
+    print(data[int(n/2)])
+    
+frequency = {0:-1}
+mode = 0
+for i in data:
+    if i not in frequency:
+        frequency[i]=1
+    else:
+        frequency[i]+=1
+    if frequency[i] > frequency[mode]:
+        mode = i
+print(mode)
+dev=[(i-mean)**2/n for i in data]
+sd = math.sqrt(sum(dev))
+print(sd)
+z=1.96
+print(mean-z*sd/math.sqrt(n),mean+z*sd/math.sqrt(n))
