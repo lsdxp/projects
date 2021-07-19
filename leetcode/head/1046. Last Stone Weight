@@ -1,0 +1,15 @@
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        import heapq
+        stones = [-i for i in stones]
+        heapq.heapify(stones)
+        while len(stones) > 1 :  
+            neg_small1 = heapq.heappop(stones)
+            neg_small2 = heapq.heappop(stones)
+            if neg_small1 != neg_small2:
+                heapq.heappush(stones,neg_small1-neg_small2)
+
+        return -stones[0] if stones else 0
+        
+        
+ convert to minHeap doing negative and pop top 2 and return negative back in the end
