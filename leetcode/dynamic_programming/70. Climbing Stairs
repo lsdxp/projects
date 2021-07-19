@@ -1,0 +1,66 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        p=0
+        q=0
+        r=1
+        #p q r
+        for i in range(1,n+1):
+            p=q
+            q=r
+            r=p+q  
+        return r
+    
+memomization -> rolling array: 
+0 1 2    1 2 3
+p q r -> p q r
+
+Time: O(n)
+Space: O(1)
+
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        import math
+        sqrt5 = math.sqrt(5)
+        fibn = math.pow((1 + sqrt5) / 2, n + 1) - math.pow((1 - sqrt5) / 2, n + 1)
+        return round(fibn / sqrt5)
+        
+
+Fibonacci general formula
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        def get_unit_matrix(n:int) -> int:
+            unit_matrix = [[ 0 for _ in range(n)] for _ in range(n)]
+            for _ in range(n):
+                unit_matrix[_][_]=1
+            return unit_matrix
+        def matrix_multiply(matrix_a,matrix_b):
+            n_row = len(matrix_a)
+            n_col = len(matrix_b[0])
+            n_tmp = len(matrix_a[0])
+            matrix_c = [[0 for _ in range(n_col)] for _ in range(n_row)]
+            for i in range(n_row):
+                for j in range(n_col):
+                    for k in range(n_tmp):
+                        matrix_c[i][j] +=matrix_a[i][k] * matrix_b[k][j]
+            return matrix_c
+        def quick_matrix_pow(matrix_a,n:int):
+            l = len(matrix_a)
+            res = get_unit_matrix(l)
+            while n:
+                if n&1:
+                    res = matrix_multiply(res,matrix_a)
+                matrix_a = matrix_multiply(matrix_a,matrix_a)
+                n >>= 1
+            return res
+        matrix = [[1,1],[1,0]]
+        base = [[1],[1]]
+        result = matrix_multiply(quick_matrix_pow(matrix,n-1),base)
+        return result[0][0];
+        
+
+https://www.desgard.com/algo/docs/part2/ch01/3-matrix-quick-pow/
+https://leetcode-cn.com/circle/article/8uRHgu/
+https://leetcode-cn.com/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/
+

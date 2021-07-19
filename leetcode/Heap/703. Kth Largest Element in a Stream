@@ -1,0 +1,15 @@
+class KthLargest:
+    import heapq
+    def __init__(self, k: int, nums: List[int]):
+        self.hp = nums
+        heapq.heapify(self.hp)
+        self.k=k
+        
+
+    def add(self, val: int) -> int:
+        heapq.heappush(self.hp,val)
+        while len(self.hp) > self.k:
+            heapq.heappop(self.hp)
+        return self.hp[0]
+        
+Follow Up: realize minHeap
