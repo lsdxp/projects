@@ -1,0 +1,21 @@
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        q=0
+        result=0
+        for i in nums:
+            q=max(q+i,i)
+            result=max(q,result)
+        return result
+        
+
+Time: O(n)
+Space: O(1)
+
+get coniguous subarray and moving to remember the biggest in the looping
+
+
+Follow Up:
+
+divide:
+
+https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-cshi-xian-si-chong-jie-fa-bao-li-f/
