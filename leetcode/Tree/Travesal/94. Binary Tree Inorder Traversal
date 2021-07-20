@@ -1,0 +1,75 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        def inorder(root:TreeNode):
+            if not root:
+                return list()
+            inorder(root.left)
+            res.append(root.val)
+            inorder(root.right)
+            
+        res = list()
+        inorder(root)
+        return res
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root:
+            return list()
+        res=list()
+        stack=list()
+        prev=None
+        while root or stack:
+            if root:
+                stack.append(root)
+                root=root.left
+            else:
+                root=stack.pop()
+                res.append(root.val)
+                root=root.right                 
+        return res
+        
+        
+ # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        res = list()
+        pre = None
+        while root:
+            if root.left:
+                pre = root.left
+                while pre.right:
+                    pre = pre.right
+                pre.right = root
+                tmp  = root
+                root = root.left   
+                tmp.left = None
+            else:
+                res.append(root.val)
+                root=root.right
+        return res
+ 
+ Time: O(n)
+ Space: O(1)
+ Morris Traversal: tree -> linked list, put right tree under the rightest child in left tree.
+ 
+ https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li/
+        
+        
+        
