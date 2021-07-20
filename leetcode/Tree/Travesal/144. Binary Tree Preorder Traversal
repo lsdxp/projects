@@ -1,0 +1,69 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        def preorder(root:TreeNode):
+            if not root:
+                return list()
+            res.append(root.val)
+            left=preorder(root.left)
+            right=preorder(root.right)
+            return res
+        
+        res = list()
+        preorder(root)
+        return res
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:       
+        res = list()
+        stack = list()     
+        while root or stack:
+            if root:
+                res.append(root.val)
+                stack.append(root)
+                root=root.left
+            else:
+                root=stack.pop()
+                root=root.right
+        return res
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:       
+        res = []
+        pre = None
+        while root:
+            if root.left:
+                pre = root.left
+                while pre.right and pre.right != root:
+                    pre = pre.right
+                if not pre.right:
+                    res.append(root.val)         
+                    pre.right=root
+                    root=root.left
+                else:                    
+                    root=root.right                
+            else:
+                res.append(root.val)
+                root=root.right          
+        return res
+https://www.cnblogs.com/anniekim/archive/2013/06/15/morristraversal.html
+        
+
