@@ -1,0 +1,49 @@
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def postorder(self, root: 'Node') -> List[int]:
+        def postorder(root:'Node'):
+            if  not root:
+                return list()
+            for child in root.children:
+                childTemp=postorder(child)
+            res.append(root.val)
+            return res
+        res = list()
+        postorder(root)
+        return res
+  
+  
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def postorder(self, root: 'Node') -> List[int]:
+        if not root:
+            return list()
+        res = list()
+        stack = list()
+        stack.append(root)
+        while stack:
+            root=stack.pop()        
+            if root.children:
+                stack.append(root)
+                stack.extend(root.children[::-1])
+                root.children = None
+            else:
+                res.append(root.val)
+        return res
+        
+append root and children then mark root's children empty so when we come back to the root we will not loop forever
+   
