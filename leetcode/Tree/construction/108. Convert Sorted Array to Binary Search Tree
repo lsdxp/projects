@@ -1,0 +1,41 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        if not nums:
+            return None
+
+        if len(nums) % 2 == 0:
+            index = int(len(nums)/2)
+        else:
+            index = int((len(nums)-1)/2)
+        median = nums[index]
+        root = TreeNode(median)
+        root.left = self.sortedArrayToBST(nums[:index])
+        root.right = self.sortedArrayToBST(nums[index+1:])
+        
+        return root
+
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        def helper(left, right):
+            if left > right:
+                return None
+
+            # 选择任意一个中间位置数字作为根节点
+            mid = (left + right + randint(0, 1)) // 2
+
+            root = TreeNode(nums[mid])
+            root.left = helper(left, mid - 1)
+            root.right = helper(mid + 1, right)
+            return root
+
+        return helper(0, len(nums) - 1)
+        
+  Follow up: 
+  https://leetcode-cn.com/problems/balance-a-binary-search-tree/
+  https://leetcode-cn.com/problems/balance-a-binary-search-tree/solution/jiang-er-cha-sou-suo-shu-bian-ping-heng-by-leetcod/
