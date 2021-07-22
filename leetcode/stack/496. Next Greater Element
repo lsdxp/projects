@@ -1,0 +1,44 @@
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        output = list()
+        for i in nums1:
+            maxV=-1
+            flag=0
+            for j in nums2:
+                if flag == 1:
+                    if j > i:
+                        maxV=j
+                        break
+                if j==i:
+                    flag=1
+            output.append(maxV)
+        return output
+        
+ Time: O(n*m)
+ Space: O(n)
+ 
+ brute force
+ 
+ class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        nextGreater ={}
+        output = list()
+        stack = list()
+        for val in nums2:
+            while stack and val > stack[-1]:
+                p=stack.pop()
+                nextGreater[p]=val
+            stack.append(val)  
+        for val in nums1:
+            if val in nextGreater:
+                output.append(nextGreater[val])
+            else:
+                output.append(-1)
+        return output
+        
+        
+ Time: O(n+m)
+ Space: O(n)
+ 
+ Monotone Stack, stack looping nums2 first to get a hash table then loop nums1
+ 
