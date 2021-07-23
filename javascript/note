@@ -11,3 +11,9 @@ console.log(typeof newVariable);
 newVariable = 1;
 
 console.log(typeof newVariable);
+
+
+operator:
+
+Is equal to: ===
+Is not equal to: !==
