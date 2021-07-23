@@ -17,3 +17,34 @@ operator:
 
 Is equal to: ===
 Is not equal to: !==
+
+logical:
+
+&& 
+||
+!
+
+truthy falsey:
+
+So which values are falsy— or evaluate to false when checked as a condition? The list of falsy values includes:
+
+0
+Empty strings like "" or ''
+null which represent when there is no value at all
+undefined which represent when a declared variable lacks a value
+NaN, or Not a Number
+
+
+// Use short circuit evaluation to assign writingUtensil variable below:
+let writingUtensil = tool || 'pen';
+
+
+arrow function:
+
+const plantNeedsWater = (day) => {
+  if (day === 'Wednesday') {
+    return true;
+  } else {
+    return false;
+  }
+};
