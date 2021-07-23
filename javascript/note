@@ -1,0 +1,1 @@
+primitive: number,string,boolean,Null,Undefined,symbol,object
