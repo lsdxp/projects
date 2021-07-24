@@ -1,3 +1,5 @@
+https://subscription.packtpub.com/book/networking-and-servers/9781788472906/3/ch03lvl1sec25/distributing-puppet-manifests
+
 
 sudo puppet apply --noop --show_diff /examples/file_hello.pp
 
@@ -20,5 +22,31 @@ file: source , owner, group , mode, recurse=> true
 P.S 'ensure => present' creates 0 file size
      'ensure => directory' for managing directories
      'ensure => link'
+package:
+     absent,installed,purged
+     
+     package { 'openssl':
+          ensure => '1.0.2g-1ubuntu4.8',
+     }
+     
+     provider
 
-https://subscription.packtpub.com/book/networking-and-servers/9781788472906/3/ch03lvl1sec25/distributing-puppet-manifests
+service:
+
+     service { 'ntp':
+       ensure    => running,
+       enable    => true,
+       hasstatus => false,
+       pattern   => 'ntpd',
+     }
+     
+     
+    service { 'ntp':
+     ensure  => running,
+     enable  => true,
+     restart => '/bin/echo Restarting >>/tmp/debug.log && systemctl restart ntp',
+    }
+    
+In the extremely rare event that the service cannot be stopped or started using the default service management command, Puppet also provides the stop and start attributes so that you can specify custom commands to stop and start the service, just the same way as with the restart attribute. If you need to use either of these, though, it's probably safe to say that you're having a bad day.
+
+    
