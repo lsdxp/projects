@@ -48,3 +48,6 @@ const plantNeedsWater = (day) => {
     return false;
   }
 };
+
+Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable. 
+Meaning that we can change the contents of a const array, but cannot reassign a new array or a different value.
