@@ -10,4 +10,15 @@ puppet describe service
 puppet describe --list
 
 
+The path attribute
+We've seen that every Puppet resource has a title (a quoted string followed by a colon). In the file_hello example, the title of the file resource is '/tmp/hello.txt'. It's easy to guess that Puppet is going to use this value as the path of the created file. In fact, path is one of the attributes you can specify for a file, but if you don't specify it, Puppet will use the title of the resource as the value of path.
+
+common attribue for 
+
+file: source , owner, group , mode, recurse=> true
+
+P.S 'ensure => present' creates 0 file size
+     'ensure => directory' for managing directories
+     'ensure => link'
+
 https://subscription.packtpub.com/book/networking-and-servers/9781788472906/3/ch03lvl1sec25/distributing-puppet-manifests
