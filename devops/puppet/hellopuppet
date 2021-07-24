@@ -1,0 +1,4 @@
+file { 'test/test.txt'
+    ensure => file,
+    echo => "hello",
+}
