@@ -51,3 +51,24 @@ const plantNeedsWater = (day) => {
 
 Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable. 
 Meaning that we can change the contents of a const array, but cannot reassign a new array or a different value.
+
+push/pop:
+
+
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+
+chores.push('cook dinner', 'mop floor');
+
+Then we call it like a function. That’s because .push() is a function and one that JavaScript allows us to use right on an array.
+.push() can take a single argument or multiple arguments separated by commas. In this case, we’re adding two elements: 'item 3' and 'item 4' to itemTracker.
+Notice that .push() changes, or mutates, itemTracker. You might also see .push() referred to as a destructive array method since it changes the initial array.
+
+other array methods:
+
+Some arrays methods that are available to JavaScript developers include: .join(), .slice(), .splice(), .shift(), .unshift(), and .concat() 
+amongst many others. Using these buil
+
+array changed when passing to function
+
+So when you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as 
+pass-by-reference since what we’re actually passing the function is a reference to where the variable memory is stored and changing the memory.
