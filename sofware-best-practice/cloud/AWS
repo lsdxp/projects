@@ -1,0 +1,12 @@
+Amazon S3: An Example of a Distributed Storage System
+Amazon S3 is a distributed object storage system. In S3, objects consist of data and metadata. The metadata is a set of name-value pairs that provides information about the object, such as date last modified. S3 supports standard metadata fields and custom metadata defined by the user.
+
+Objects are organized into buckets. Amazon S3 users need to create buckets and specify which bucket to store objects to, or retrieve objects from. Buckets are logical structures that allow users to organize their data. Behind the scenes, the actual data may be distributed across a large number of storage nodes across multiple Amazon Availability Zones (AZ) within the same region. An Amazon S3 bucket is always tied to a specific geographical region—for example, US-East 1 (North Virginia)—and objects cannot leave the region.
+
+Each object in S3 is identified by a bucket, a key, and a version ID. The key is a unique identifier of each object within its bucket. S3 tracks multiple versions of each object, indicated by the version ID.
+
+Due to the CAP theorem, Amazon S3 provides high availability and partition tolerance, but cannot guarantee consistency. Instead, it offers an eventual consistency model:
+
+When you PUT or DELETE data in S3, data is safely stored, but it may take time for the change to replicate across Amazon S3.
+When a change occurs, clients immediately reading the data will still see an old version of the data, until the change is propagated.
+S3 guarantees atomicity—when a client reads the object, they might view the old version of the object, or the new version, but never a corrupted or partial version.
