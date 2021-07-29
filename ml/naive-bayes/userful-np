@@ -1,0 +1,17 @@
+import numpy as np
+from scipy.stats import norm
+
+np.genfromtxt('pima-indians-diabetes.csv',delimiter=',')
+
+np.random.shuffle(data)
+
+
+trainClass0=train[train[:,8]==0,:]
+trainClass1=train[train[:,8]==1,:]
+
+
+predict[:,0]+=np.log(norm.pdf(test[:,i],mean1,np.sqrt(sd1))
+predict[:,1]+=np.log(norm.pdf(test[:,i],mean2,np.sqrt(sd2))
+
+comp=np.argmax(predict,axis=1)
+acc=1-np.count_nonzero(np.logical_xor(comp,test[:,8]))/len(test)
