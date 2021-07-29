@@ -1,0 +1,35 @@
+Your expertise
+Your expertise
+
+good understanding of DevOps principles (CI/CD, testing automation, release automation)
+good knowledge of Linux / Bash knowledge / Python / Java / Conda
+at least 5 years' experience with build automation process (e.g. TeamCity, Jenkins, Maven, Gradle)
+good understanding of Infrastructure-as-Code (e.g. Terraform, ARM, etc)
+good understanding of containerisation and orchestration technologies (Docker, Kubernetes, Azure Kubernetes Service)
+good understanding development tools (e.g. Sonar, GitHub, Nexus, Fortify)
+good understanding of microservice architecture and DevOps practices that support
+good understanding of configuration management (e.g. CloudInit, Packer, Ansible, Puppet, Chef)
+good understanding of cloud computing (e.g. Technologies, Deployment, costing, HA/DR, etc.)
+experience with testing automation (e.g. Selenium, Hoverfly, Robot Framework, Cucumber)
+experience of monitoring /reporting tools (e.g. AppInsights, Grafana, ELK, App Dynamics, Splunk)
+experience with release governance automation (e.g. ServiceNow, JIRA, Confluence)
+experience configuring load balancing & traffic routing (e.g. nginx, LTM/GTM)
+experience of security administration aspects (e.g. SSL, SSO, Certificates, TLS)
+experience of SCRUM/Agile methodologies
+
+You are:
+
+passionate about what you do, you value excellence, learning and integrity
+you enjoy a work environment that places emphasis on team work, collaboration and delivering business value
+someone who is technically excellent and wants to grow further
+proactive, detail-oriented and comfortable working in dynamic environments with fast paced deliveries and changing requirements
+a self-sufficient, quick learner, who can work well both independently as well as in a team
+an excellent communicator, strong written and verbal communication skills in English
+
+
+做了不到两年的所谓platform/infra，在2w多人的中型厂做cloud platform侧重CI/CD，这儿的特点就是每几个月就要学习几个新的技术。。。从最开始写ruby gem，到之后帮助dockerize几百个service，然后用groovy设计CI/CD pipeline让二百多个github org的项目自动测试和部署(主要是ruby和js)，再到用terraform 在OpenStack/AWS上维护-搭建-优化相对应的几个平台， 再到用helm deploy service和app到kubernetes。。
+可能相比其他工作了两年的初级程序员项目会多一点儿(?)，还是迷茫career path，也和老板探讨过，觉得唯一的优势是thinking outside of the box来进行设计和problem detecting-solving skills.
+出现了问题，不能说重启一下就好了，可能需要integrate splunk/new relic来归纳研究问题出现的原因。然后看能不能codify解决问题。会读一些项目的源码来分析。有时候还会有搭建云平台时候的budget calculation和predication。。。
+和其他工作5年以上的其他组国人同事也经常探讨，感觉都有各自的优缺点，因为都是螺丝钉，所以都会觉得无聊。
+其实我个人理解的是，相比SDE，SRE/SDE-infra/DevOps因为需求不同，需要不停的学习新东西，但是没有机会精通，经常会有不安全感，但是这种不安全感可能需要花费更多的经历来学各种技术，学习曲线会很平缓很累。。。
+再就是编程能力也需要自己私下来搞。。。
