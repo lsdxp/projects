@@ -2,3 +2,9 @@ learning rate
 stochastic gradient descent
 lambda
 season K
+
+loop lambda
+  loop learning rate
+        loop season
+            loop steps
+                  gd_cost
