@@ -1,0 +1,17 @@
+class Solution:
+    def findSecondMinimumValue(self, root: TreeNode) -> int:
+        self.rootvalue = root.val
+        self.ans=-1
+        def dfs(root):
+            if not root:
+                return
+            if self.ans != -1 and root.val >= self.ans:
+                return
+            if root.val > self.rootvalue:
+                self.ans = root.val
+            
+            dfs(root.left)
+            dfs(root.right)
+
+        dfs(root)
+        return self.ans
