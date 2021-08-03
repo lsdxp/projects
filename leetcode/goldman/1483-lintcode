@@ -1,0 +1,26 @@
+class Solution:
+    """
+    @param names: the name
+    @param grades: the grade
+    @return: the maximum average score
+    """
+    def maximumAverageScore(self, names, grades):
+        # Write your code here
+        dict={}
+        maxv=0
+        count={}
+        for i in range(len(names)):
+            if names[i] not in dict:
+                dict[names[i]]=grades[i]
+                count[names[i]]=1
+            else:
+                count[names[i]]+=1
+                dict[names[i]]=(dict[names[i]]+grades[i])
+        
+        for key,value in dict.items():
+            tmp = value/float(count[key])
+            if tmp > maxv:
+                maxv = tmp
+        return float(maxv)
+        
+https://www.lintcode.com/problem/1483/        
