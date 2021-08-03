@@ -1,0 +1,17 @@
+class Solution:
+    def deleteAndEarn(self, nums: List[int]) -> int:
+        maxVal = max(nums)
+        total = [0] * (maxVal + 1)
+        for val in nums:
+            total[val]+=val
+        def rob(nums):
+            n = len(nums)
+            first=nums[0]
+            second=max(nums[0],nums[1])
+            for i in range(2,n):
+                tmp=first
+                first=second
+                second = max(tmp+nums[i],second)
+            return second
+        return rob(total)
+        
