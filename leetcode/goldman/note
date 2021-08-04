@@ -1,0 +1,8 @@
+DATA STRUCTURES
+Software engineers at Goldman Sachs regularly design, implement, and manipulate complex data structures. Depending on the role you’re
+interviewing for, you may be asked questions about time and space complexities of libraries, and underlying data structures including arrays,
+hash-tables, hash-maps, linked lists, stacks, binary trees, heaps, graphs, and queues.
+SOFTWARE ALGORITHMS
+If you are asked about data structures, you will probably also be tested on your understanding of the most appropriate algorithms to use
+with different data structures, such as binary search, dynamic programming, recursion and sorting. You’ll need to show familiarity with the
+complexity of the algorithms and of ways to improve them, so try to produce an optimal example rather than one that simply works. 
