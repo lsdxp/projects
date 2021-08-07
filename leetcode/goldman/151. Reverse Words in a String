@@ -1,0 +1,12 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        ret=[]
+        for i in s[::-1].strip().split(" "):
+            if i:
+                ret.append(i[::-1])
+        return " ".join(ret)
+        
+        
+        
+ 
+ or use two pointer
