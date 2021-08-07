@@ -1,0 +1,18 @@
+class Solution:
+    def highFive(self, items: List[List[int]]) -> List[List[int]]:
+        d = {}
+        ret = []
+        for item in items:
+            if item[0] not in d:
+                d[item[0]]=[item[1]]
+            else:
+                d[item[0]].append(item[1])
+        for key,value in d.items():
+            d[key].sort(reverse=True)
+            ret.append([key,int(sum(d[key][:5])/5)])
+        ret=sorted(ret,key = lambda x:x[0])
+        return ret
+        
+  
+  
+or use a max/min heap
