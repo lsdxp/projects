@@ -1,0 +1,27 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        hasrobbed=len(nums)*[0]
+        norobbed=len(nums)*[0]
+        hasrobbed[0]=nums[0]
+        norobbed[0]=0
+        maxv=nums[0]
+        for i in range(1,len(nums)):
+            hasrobbed[i]=norobbed[i-1]+nums[i]
+            norobbed[i]=max(hasrobbed[i-1],norobbed[i-1])
+            maxv=max(hasrobbed[i],norobbed[i])
+        return maxv
+        
+        
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n=len(nums)
+        rob=n*[0]
+        rob[0]=nums[0]
+        if n < 2:
+            return rob[0]
+        else:
+            rob[1]=max(nums[1],nums[0])
+        for i in range(2,n):
+            rob[i]=max(rob[i-2]+nums[i],rob[i-1])
+        return rob[n-1]

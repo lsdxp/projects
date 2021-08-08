@@ -1,0 +1,22 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        def quickMul(x,n):
+            if n == 0:
+                return 1
+            if n == 1:
+                return x
+            
+            y=quickMul(x,n // 2)
+
+            if n % 2 == 0:
+                return y*y
+            else:
+                return y*y*x
+        if n>= 0:
+            return quickMul(x,n)
+        else:
+            return 1.0/quickMul(x,-n)
+            
+            
+  
+ recursion or iterative

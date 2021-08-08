@@ -1,0 +1,24 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicatesUnsorted(self, head: ListNode) -> ListNode:
+        data = {}
+        tmp = head
+        while tmp:
+            if tmp.val not in data:
+                data[tmp.val]=1
+            else:
+                data[tmp.val]+=1
+            tmp = tmp.next
+        tmp = head
+        root = start = ListNode()
+        while tmp:
+            if data[tmp.val] == 1:
+                start.next = tmp
+                start = start.next
+            tmp = tmp.next
+        start.next = None
+        return root.next 

@@ -1,0 +1,27 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def balanceBST(self, root: TreeNode) -> TreeNode:
+        inorder=list()
+        def getInorder(root):
+            if root.left:
+                getInorder(root.left)
+            inorder.append(root.val)
+            if root.right:
+                getInorder(root.right)
+        
+        getInorder(root)
+        def build(l,r):
+            mid = (l+r) // 2
+            root=TreeNode(inorder[mid])
+            if mid-1>=l:
+                root.left=build(l,mid-1)
+            if mid+1<=r:
+                root.right=build(mid+1,r)
+            return root
+        balance=build(0,len(inorder)-1)
+        return balance
