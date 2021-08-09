@@ -15,3 +15,23 @@ class Solution:
             return second
         return rob(total)
         
+ 
+ class Solution:
+    def deleteAndEarn(self, nums: List[int]) -> int:
+        maxVal = max(nums)
+        total = [0] * (maxVal + 1)
+        for val in nums:
+            total[val]+=val
+        n=len(total)
+        if n <2:
+            return total[0]
+        dp = [0]*n
+        dp[0] = total[0]
+        dp[1] = max(dp[0],total[1])
+        maxv=dp[1]
+        for i in range(2,n):
+            dp[i]=max(dp[i-1],dp[i-2]+total[i])
+            if dp[i]> maxv:
+                maxv=dp[i]           
+        return maxv
+        
