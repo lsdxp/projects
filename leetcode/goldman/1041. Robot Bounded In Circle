@@ -1,0 +1,28 @@
+class Solution:
+    def isRobotBounded(self, instructions: str) -> bool:
+        degree=90
+        x,y=0,0
+        for i in instructions:
+            if i == "L":
+                degree-=90
+            if i == "R":
+                degree+=90
+            if i == "G":
+                if degree == 90 or degree == -270:
+                    y+=1
+                if degree == -90 or degree == 270:
+                    y-=1
+                if degree == 0 or degree == 360:
+                    x-=1
+                if degree == 180 or degree == -180 :
+                    x+=1
+            if degree >= 360:
+                degree = degree % 360
+            if degree <= -360 :
+                degree = - ((- degree) % 360)
+                    
+        print(degree,x,y)
+            
+        if (degree != 90 and degree != -270) or (x==0 and y==0):
+            return True
+        return False
