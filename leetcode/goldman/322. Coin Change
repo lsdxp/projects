@@ -1,0 +1,9 @@
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        dp=(amount+1)*[math.inf]
+        dp[0]=0        
+        for i in coins:  
+            for a in range(i,amount+1):
+                dp[a]=min(dp[a-i]+1,dp[a])       
+
+        return dp[amount] if dp[amount] != math.inf else -1

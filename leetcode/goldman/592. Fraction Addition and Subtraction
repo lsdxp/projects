@@ -1,0 +1,14 @@
+class Solution:
+    def fractionAddition(self, expression: str) -> str:
+        lst=expression.replace("+"," +").replace("-"," -").split()
+        A=0
+        B=1
+        for num in lst:
+            a,b = num.split('/')
+            a,b = int(a),int(b)
+            A = A*b+B*a
+            B *= b
+            d = math.gcd(int(A),int(B))
+            A /= d
+            B /= d
+        return str(int(A))+"/"+str(int(B))

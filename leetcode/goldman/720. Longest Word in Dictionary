@@ -1,0 +1,13 @@
+class Solution:
+    def longestWord(self, words: List[str]) -> str:
+        words.sort()
+        path=set([''])
+        res=''
+        
+        for word in words:
+            if word[:-1] in path:
+                path.add(word)
+                if len(word)>len(res):
+                    res=word
+
+        return res

@@ -11,3 +11,19 @@ class Solution:
                 sum-=nums[start]
                 start+=1
         return  0 if l == math.inf else l
+  
+
+
+class Solution:
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        start=end=0
+        slide_sum=0
+        minl=math.inf
+        while end<len(nums) :
+            slide_sum+=nums[end]
+            while slide_sum>=target:
+                minl=min(end-start+1,minl)
+                slide_sum-=nums[start]
+                start+=1
+            end+=1
+        return minl if minl!= math.inf else 0
