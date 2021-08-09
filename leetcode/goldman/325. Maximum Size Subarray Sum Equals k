@@ -1,0 +1,16 @@
+class Solution:
+    def maxSubArrayLen(self, nums: List[int], k: int) -> int:
+        acc_sum=[0]*len(nums)
+        acc_sum[0]=nums[0]
+        for i in range(1,len(nums)):
+            acc_sum[i]=acc_sum[i-1]+nums[i]    
+        data={}
+        res=0
+        for i in range(len(nums)):
+            if acc_sum[i] not in data:
+                data[acc_sum[i]]=i
+            if acc_sum[i] -k in data:
+                res=max(res,i-data[acc_sum[i] -k])
+            if acc_sum[i] == k:
+                res = max (res,i+1)  
+        return res
